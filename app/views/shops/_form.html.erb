@@ -1,0 +1,101 @@
+<%= form_for(@shop) do |f| %>
+  <% if @shop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shop.errors.count, "error") %> prohibited this shop from being saved:</h2>
+
+      <ul>
+      <% @shop.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :secondname %><br />
+    <%= f.text_field :secondname %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :workphone %><br />
+    <%= f.text_field :workphone %>
+  </div>
+  <div class="field">
+    <%= f.label :owncellphone %><br />
+    <%= f.text_field :owncellphone %>
+  </div>
+  <div class="field">
+    <%= f.label :workcellphone %><br />
+    <%= f.text_field :workcellphone %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :icq %><br />
+    <%= f.text_field :icq %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :reception %><br />
+    <%= f.text_field :reception %>
+  </div>
+  <div class="field">
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :contract %><br />
+    <%= f.text_field :contract %>
+  </div>
+  <div class="field">
+    <%= f.label :okpo %><br />
+    <%= f.text_field :okpo %>
+  </div>
+  <div class="field">
+    <%= f.label :tgnl %><br />
+    <%= f.text_field :tgnl %>
+  </div>
+  <div class="field">
+    <%= f.label :scancontract %><br />
+    <%= f.text_field :scancontract %>
+  </div>
+  <div class="field">
+    <%= f.label :station %><br />
+    <%= f.text_field :station %>
+  </div>
+  <div class="field">
+    <%= f.label :railway %><br />
+    <%= f.text_field :railway %>
+  </div>
+  <div class="field">
+    <%= f.label :postaddress %><br />
+    <%= f.text_field :postaddress %>
+  </div>
+  <div class="field">
+    <%= f.label :legaladdress %><br />
+    <%= f.text_field :legaladdress %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

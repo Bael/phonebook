@@ -1,4 +1,16 @@
 Phonebook::Application.routes.draw do
+  resources :employees
+
+
+  resources :shops
+
+
+  resources :companies
+
+
+  resources :railways
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

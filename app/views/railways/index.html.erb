@@ -1,0 +1,33 @@
+<h1>Listing railways</h1>
+
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Secondname</th>
+    <th>Lastname</th>
+    <th>Phone</th>
+    <th>Phone2</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @railways.each do |railway| %>
+  <tr>
+    <td><%= railway.firstname %></td>
+    <td><%= railway.secondname %></td>
+    <td><%= railway.lastname %></td>
+    <td><%= railway.phone %></td>
+    <td><%= railway.phone2 %></td>
+    <td><%= railway.name %></td>
+    <td><%= link_to 'Show', railway %></td>
+    <td><%= link_to 'Edit', edit_railway_path(railway) %></td>
+    <td><%= link_to 'Destroy', railway, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Railway', new_railway_path %>
