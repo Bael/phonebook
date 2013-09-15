@@ -10,6 +10,7 @@ Phonebook::Application.routes.draw do
 
   resources :railways
 
+  root :to => 'companies#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
