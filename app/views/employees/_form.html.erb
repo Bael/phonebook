@@ -1,57 +1,68 @@
-<%= form_for(@employee) do |f| %>
-  <% if @employee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
-
-      <ul>
-      <% @employee.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @employee, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :firstname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :firstname, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :secondname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :secondname, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :lastname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lastname, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :workphone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :workphone, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :owncellphone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :owncellphone, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :workcellphone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :workcellphone, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :icq, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :icq, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :description, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :firstname %><br />
-    <%= f.text_field :firstname %>
-  </div>
-  <div class="field">
-    <%= f.label :secondname %><br />
-    <%= f.text_field :secondname %>
-  </div>
-  <div class="field">
-    <%= f.label :lastname %><br />
-    <%= f.text_field :lastname %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :workphone %><br />
-    <%= f.text_field :workphone %>
-  </div>
-  <div class="field">
-    <%= f.label :owncellphone %><br />
-    <%= f.text_field :owncellphone %>
-  </div>
-  <div class="field">
-    <%= f.label :workcellphone %><br />
-    <%= f.text_field :workcellphone %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :icq %><br />
-    <%= f.text_field :icq %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                employees_path, :class => 'btn' %>
   </div>
 <% end %>

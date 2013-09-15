@@ -1,95 +1,55 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Company -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Firstname:</b>
-  <%= @company.firstname %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:firstname) %>:</strong></dt>
+  <dd><%= @company.firstname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:secondname) %>:</strong></dt>
+  <dd><%= @company.secondname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lastname) %>:</strong></dt>
+  <dd><%= @company.lastname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @company.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:workphone) %>:</strong></dt>
+  <dd><%= @company.workphone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:owncellphone) %>:</strong></dt>
+  <dd><%= @company.owncellphone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:workcellphone) %>:</strong></dt>
+  <dd><%= @company.workcellphone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @company.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:icq) %>:</strong></dt>
+  <dd><%= @company.icq %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @company.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:reception) %>:</strong></dt>
+  <dd><%= @company.reception %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fax) %>:</strong></dt>
+  <dd><%= @company.fax %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @company.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:contract) %>:</strong></dt>
+  <dd><%= @company.contract %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:okpo) %>:</strong></dt>
+  <dd><%= @company.okpo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:scancontract) %>:</strong></dt>
+  <dd><%= @company.scancontract %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:postaddress) %>:</strong></dt>
+  <dd><%= @company.postaddress %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:legaladdress) %>:</strong></dt>
+  <dd><%= @company.legaladdress %></dd>
+</dl>
 
-<p>
-  <b>Secondname:</b>
-  <%= @company.secondname %>
-</p>
-
-<p>
-  <b>Lastname:</b>
-  <%= @company.lastname %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @company.title %>
-</p>
-
-<p>
-  <b>Workphone:</b>
-  <%= @company.workphone %>
-</p>
-
-<p>
-  <b>Owncellphone:</b>
-  <%= @company.owncellphone %>
-</p>
-
-<p>
-  <b>Workcellphone:</b>
-  <%= @company.workcellphone %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @company.email %>
-</p>
-
-<p>
-  <b>Icq:</b>
-  <%= @company.icq %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @company.description %>
-</p>
-
-<p>
-  <b>Reception:</b>
-  <%= @company.reception %>
-</p>
-
-<p>
-  <b>Fax:</b>
-  <%= @company.fax %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @company.name %>
-</p>
-
-<p>
-  <b>Contract:</b>
-  <%= @company.contract %>
-</p>
-
-<p>
-  <b>Okpo:</b>
-  <%= @company.okpo %>
-</p>
-
-<p>
-  <b>Scancontract:</b>
-  <%= @company.scancontract %>
-</p>
-
-<p>
-  <b>Postaddress:</b>
-  <%= @company.postaddress %>
-</p>
-
-<p>
-  <b>Legaladdress:</b>
-  <%= @company.legaladdress %>
-</p>
-
-
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              companies_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_company_path(@company), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              company_path(@company),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

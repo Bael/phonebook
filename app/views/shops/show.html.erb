@@ -1,110 +1,61 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Shop -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Firstname:</b>
-  <%= @shop.firstname %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:firstname) %>:</strong></dt>
+  <dd><%= @shop.firstname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:secondname) %>:</strong></dt>
+  <dd><%= @shop.secondname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lastname) %>:</strong></dt>
+  <dd><%= @shop.lastname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @shop.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:workphone) %>:</strong></dt>
+  <dd><%= @shop.workphone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:owncellphone) %>:</strong></dt>
+  <dd><%= @shop.owncellphone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:workcellphone) %>:</strong></dt>
+  <dd><%= @shop.workcellphone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @shop.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:icq) %>:</strong></dt>
+  <dd><%= @shop.icq %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @shop.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:reception) %>:</strong></dt>
+  <dd><%= @shop.reception %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fax) %>:</strong></dt>
+  <dd><%= @shop.fax %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @shop.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:contract) %>:</strong></dt>
+  <dd><%= @shop.contract %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:okpo) %>:</strong></dt>
+  <dd><%= @shop.okpo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tgnl) %>:</strong></dt>
+  <dd><%= @shop.tgnl %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:scancontract) %>:</strong></dt>
+  <dd><%= @shop.scancontract %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:station) %>:</strong></dt>
+  <dd><%= @shop.station %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:railway_id) %>:</strong></dt>
+  <dd><%= @shop.railway_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:postaddress) %>:</strong></dt>
+  <dd><%= @shop.postaddress %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:legaladdress) %>:</strong></dt>
+  <dd><%= @shop.legaladdress %></dd>
+</dl>
 
-<p>
-  <b>Secondname:</b>
-  <%= @shop.secondname %>
-</p>
-
-<p>
-  <b>Lastname:</b>
-  <%= @shop.lastname %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @shop.title %>
-</p>
-
-<p>
-  <b>Workphone:</b>
-  <%= @shop.workphone %>
-</p>
-
-<p>
-  <b>Owncellphone:</b>
-  <%= @shop.owncellphone %>
-</p>
-
-<p>
-  <b>Workcellphone:</b>
-  <%= @shop.workcellphone %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @shop.email %>
-</p>
-
-<p>
-  <b>Icq:</b>
-  <%= @shop.icq %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @shop.description %>
-</p>
-
-<p>
-  <b>Reception:</b>
-  <%= @shop.reception %>
-</p>
-
-<p>
-  <b>Fax:</b>
-  <%= @shop.fax %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @shop.name %>
-</p>
-
-<p>
-  <b>Contract:</b>
-  <%= @shop.contract %>
-</p>
-
-<p>
-  <b>Okpo:</b>
-  <%= @shop.okpo %>
-</p>
-
-<p>
-  <b>Tgnl:</b>
-  <%= @shop.tgnl %>
-</p>
-
-<p>
-  <b>Scancontract:</b>
-  <%= @shop.scancontract %>
-</p>
-
-<p>
-  <b>Station:</b>
-  <%= @shop.station %>
-</p>
-
-<p>
-  <b>Railway:</b>
-  <%= @shop.railway %>
-</p>
-
-<p>
-  <b>Postaddress:</b>
-  <%= @shop.postaddress %>
-</p>
-
-<p>
-  <b>Legaladdress:</b>
-  <%= @shop.legaladdress %>
-</p>
-
-
-<%= link_to 'Edit', edit_shop_path(@shop) %> |
-<%= link_to 'Back', shops_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              shops_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_shop_path(@shop), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              shop_path(@shop),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

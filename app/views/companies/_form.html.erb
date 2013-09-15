@@ -1,89 +1,116 @@
-<%= form_for(@company) do |f| %>
-  <% if @company.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
-
-      <ul>
-      <% @company.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @company, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :firstname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :firstname, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :secondname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :secondname, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :lastname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lastname, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :workphone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :workphone, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :owncellphone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :owncellphone, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :workcellphone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :workcellphone, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :icq, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :icq, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :description, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :reception, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :reception, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :fax, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fax, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :contract, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :contract, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :okpo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :okpo, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :scancontract, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :scancontract, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :postaddress, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :postaddress, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :legaladdress, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :legaladdress, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :firstname %><br />
-    <%= f.text_field :firstname %>
-  </div>
-  <div class="field">
-    <%= f.label :secondname %><br />
-    <%= f.text_field :secondname %>
-  </div>
-  <div class="field">
-    <%= f.label :lastname %><br />
-    <%= f.text_field :lastname %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :workphone %><br />
-    <%= f.text_field :workphone %>
-  </div>
-  <div class="field">
-    <%= f.label :owncellphone %><br />
-    <%= f.text_field :owncellphone %>
-  </div>
-  <div class="field">
-    <%= f.label :workcellphone %><br />
-    <%= f.text_field :workcellphone %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :icq %><br />
-    <%= f.text_field :icq %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :reception %><br />
-    <%= f.text_field :reception %>
-  </div>
-  <div class="field">
-    <%= f.label :fax %><br />
-    <%= f.text_field :fax %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :contract %><br />
-    <%= f.text_field :contract %>
-  </div>
-  <div class="field">
-    <%= f.label :okpo %><br />
-    <%= f.text_field :okpo %>
-  </div>
-  <div class="field">
-    <%= f.label :scancontract %><br />
-    <%= f.text_field :scancontract %>
-  </div>
-  <div class="field">
-    <%= f.label :postaddress %><br />
-    <%= f.text_field :postaddress %>
-  </div>
-  <div class="field">
-    <%= f.label :legaladdress %><br />
-    <%= f.text_field :legaladdress %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                companies_path, :class => 'btn' %>
   </div>
 <% end %>
