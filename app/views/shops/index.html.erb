@@ -1,16 +1,19 @@
 <%- model_class = Shop -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1><%=t '.title', :default => 'Депо' %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+    
       <th><%= model_class.human_attribute_name(:firstname) %></th>
       <th><%= model_class.human_attribute_name(:secondname) %></th>
       <th><%= model_class.human_attribute_name(:lastname) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:workphone) %></th>
+      <!--
       <th><%= model_class.human_attribute_name(:owncellphone) %></th>
       <th><%= model_class.human_attribute_name(:workcellphone) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
@@ -18,7 +21,6 @@
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:reception) %></th>
       <th><%= model_class.human_attribute_name(:fax) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:contract) %></th>
       <th><%= model_class.human_attribute_name(:okpo) %></th>
       <th><%= model_class.human_attribute_name(:tgnl) %></th>
@@ -28,6 +30,7 @@
       <th><%= model_class.human_attribute_name(:postaddress) %></th>
       <th><%= model_class.human_attribute_name(:legaladdress) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
+      -->
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -35,11 +38,14 @@
     <% @shops.each do |shop| %>
       <tr>
         <td><%= link_to shop.id, shop_path(shop) %></td>
+        <td><%= link_to shop.name, shop_path(shop) %></td>
+    
         <td><%= shop.firstname %></td>
         <td><%= shop.secondname %></td>
         <td><%= shop.lastname %></td>
         <td><%= shop.title %></td>
         <td><%= shop.workphone %></td>
+        <!--
         <td><%= shop.owncellphone %></td>
         <td><%= shop.workcellphone %></td>
         <td><%= shop.email %></td>
@@ -47,7 +53,6 @@
         <td><%= shop.description %></td>
         <td><%= shop.reception %></td>
         <td><%= shop.fax %></td>
-        <td><%= shop.name %></td>
         <td><%= shop.contract %></td>
         <td><%= shop.okpo %></td>
         <td><%= shop.tgnl %></td>
@@ -57,6 +62,7 @@
         <td><%= shop.postaddress %></td>
         <td><%= shop.legaladdress %></td>
         <td><%=l shop.created_at %></td>
+        -->
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_shop_path(shop), :class => 'btn btn-mini' %>

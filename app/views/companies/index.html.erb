@@ -1,15 +1,18 @@
 <%- model_class = Company -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1><%=t '.title', :default => 'Организации' %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+     
       <th><%= model_class.human_attribute_name(:firstname) %></th>
       <th><%= model_class.human_attribute_name(:secondname) %></th>
       <th><%= model_class.human_attribute_name(:lastname) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
+      <!--
       <th><%= model_class.human_attribute_name(:workphone) %></th>
       <th><%= model_class.human_attribute_name(:owncellphone) %></th>
       <th><%= model_class.human_attribute_name(:workcellphone) %></th>
@@ -18,13 +21,13 @@
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:reception) %></th>
       <th><%= model_class.human_attribute_name(:fax) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:contract) %></th>
       <th><%= model_class.human_attribute_name(:okpo) %></th>
       <th><%= model_class.human_attribute_name(:scancontract) %></th>
       <th><%= model_class.human_attribute_name(:postaddress) %></th>
       <th><%= model_class.human_attribute_name(:legaladdress) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
+      -->
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -32,10 +35,13 @@
     <% @companies.each do |company| %>
       <tr>
         <td><%= link_to company.id, company_path(company) %></td>
+        <td><%= link_to company.name, company_path(company) %></td>
+     
         <td><%= company.firstname %></td>
         <td><%= company.secondname %></td>
         <td><%= company.lastname %></td>
         <td><%= company.title %></td>
+        <!--
         <td><%= company.workphone %></td>
         <td><%= company.owncellphone %></td>
         <td><%= company.workcellphone %></td>
@@ -44,13 +50,13 @@
         <td><%= company.description %></td>
         <td><%= company.reception %></td>
         <td><%= company.fax %></td>
-        <td><%= company.name %></td>
         <td><%= company.contract %></td>
         <td><%= company.okpo %></td>
         <td><%= company.scancontract %></td>
         <td><%= company.postaddress %></td>
         <td><%= company.legaladdress %></td>
         <td><%=l company.created_at %></td>
+        -->
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_company_path(company), :class => 'btn btn-mini' %>

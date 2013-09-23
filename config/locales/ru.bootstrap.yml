@@ -1,7 +1,7 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+ru:
   helpers:
     actions: "Действия"
     links:
@@ -9,8 +9,9 @@ en:
       cancel: "Отменить"
       confirm: "Вы уверены?"
       destroy: "Удалить"
-      new: "Новый объект"
+      new: "Новая запись"
       create: "Создать"
+      edit: "Редактировать"
       
     titles:
       edit: "Редактировать"

@@ -1,18 +1,18 @@
 <%- model_class = Railway -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1><%=t '.title', :default => 'ЖД' %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:firstname) %></th>
       <th><%= model_class.human_attribute_name(:secondname) %></th>
       <th><%= model_class.human_attribute_name(:lastname) %></th>
       <th><%= model_class.human_attribute_name(:phone) %></th>
       <th><%= model_class.human_attribute_name(:phone2) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <!--  <th><%= model_class.human_attribute_name(:created_at) %></th> -->
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -20,13 +20,13 @@
     <% @railways.each do |railway| %>
       <tr>
         <td><%= link_to railway.id, railway_path(railway) %></td>
+        <td><%= link_to railway.name, railway_path(railway) %></td>
         <td><%= railway.firstname %></td>
         <td><%= railway.secondname %></td>
         <td><%= railway.lastname %></td>
         <td><%= railway.phone %></td>
         <td><%= railway.phone2 %></td>
-        <td><%= railway.name %></td>
-        <td><%=l railway.created_at %></td>
+        <!--<td><%=l railway.created_at %></td> -->
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_railway_path(railway), :class => 'btn btn-mini' %>

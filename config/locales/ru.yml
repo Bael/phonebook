@@ -3,6 +3,82 @@
 
 
 ru:
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+  
+  activerecord:
+      models:
+        company:
+          one: 'Организация'
+          other: 'Организации'
+          few: 'Организации'
+          many: 'Организации'
+        railway: ЖД
+        employee:
+          one: 'Сотрудник'
+          other: 'Сотрудники'
+        shop: Депо
+      attributes:
+        workphone: 'рабочий телефон'
+        company:
+          title: Должность
+          okpo: ОКПО
+          firstname: Имя
+          lastname: Фамилия
+          secondname: Отчество
+          contract: Ссылка на договор
+          description: Описание
+          email: Электронная почта
+          fax: Факс
+          icq: ICQ
+          legaladdress: Юр.адрес
+          name: Название
+          owncellphone: Личный сотовый
+          postaddress: Почтовый адрес
+          reception: Приемная
+          scancontract: Ссылка на скан договора
+          workcellphone: Рабочий сотовый
+          workphone: Рабочий телефон
+        employee:
+          title: Должность
+          firstname: Имя
+          lastname: Фамилия
+          secondname: Отчество
+          description: Описание
+          email: Электронная почта
+          icq: ICQ
+          owncellphone: Личный сотовый
+          workcellphone: Рабочий сотовый
+          workphone: Рабочий телефон
+        railway:
+          firstname: Имя
+          lastname: Фамилия
+          secondname: Отчество
+          name: Название
+          phone: Телефон
+          phone2: Добавочный телефон
+        shop:
+          title: Должность
+          okpo: ОКПО
+          firstname: Имя
+          lastname: Фамилия
+          secondname: Отчество
+          contract: Ссылка на договор
+          description: Описание
+          email: Электронная почта
+          fax: Факс
+          icq: ICQ
+          legaladdress: Юр.адрес
+          name: Название
+          owncellphone: Личный сотовый
+          postaddress: Почтовый адрес
+          reception: Приемная
+          scancontract: Ссылка на скан договора c Депо
+          workcellphone: Рабочий сотовый
+          workphone: Рабочий телефон
+          tgnl: ТГНЛ Депо
+          railway: ЖД дорога
+          station: ЖД станция
   date:
     abbr_day_names:
     - Вс
@@ -252,17 +328,4 @@ ru:
       long: ! '%d %B %Y, %H:%M'
       short: ! '%d %b, %H:%M'
     pm: вечера
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
-  activemodel:
-    errors:
-      <<: *errors
-    activerecord:
-    models:
-      company: Организация
-    attributes:
-      company:
-        title: "Название"
-        okpo: "ОКПО"
-
-    errors:
-      <<: *errors
+  
